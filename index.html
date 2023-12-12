@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primor</title>
+    <link rel="icon" type="image/jpg" href="IMG/logoPrimor.jpg"/>
+<style>
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ff0000;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+/*Colocar la clase logo con la imagen a la derecha del header*/
+header #busqueda {
+    display: grid;
+    grid-template-columns: 20% 55% 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+header .busqueda .logo img{
+    align-items: end;
+    justify-content: end;
+}
+header .logo img{
+    float: left;
+    background-color: black;
+    width: 80%;
+    margin-left: -2%;
+    margin-top: 6%;
+    margin-bottom: 3%;
+}
+header #busqueda2 input{
+    margin-top: 3%;
+    margin-bottom: 1%;
+    margin-left: -6%;
+    width: 117%;
+    height: 40px;
+    border-radius: 50px;
+    /*Hazme que la letra del placeholder tenga una separacion al inicio del input*/
+    padding-left: 1.5%;
+    color: lightgray;
+    font-family: Muli, sans-serif;
+    font-size: 105%;
+}
+/*Colocar la clase carritoCompra con la imagen a la derecha del header*/
+
+header #usuario{
+    float: right;
+    width: 15%;
+    height: 40%;
+    margin-right: -21%;
+    cursor: pointer;
+}
+
+header .iconos img{
+    float: right;
+    width: 14%;
+    height: 40%;
+    margin-top: 8.8%;
+    padding-right: 7%;
+}
+
+nav{
+    margin-top: 1%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 14%);
+    justify-content: center;
+    align-items: center;
+    font-family: Playfair Display;
+    font-size: 100%;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    text-align:center;
+    margin-left: 20%;
+}
+
+nav li {
+    margin: 0 20px;
+    position: relative;
+
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+    
+nav a::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+#banner #anuncio1{
+    margin-top: 2.5%;
+    margin-left:2.5%;
+    width: 95%;
+    overflow: hidden;
+}
+
+.promocion{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Playfair Display;
+}
+
+.promociones{
+    display: grid;
+    margin-left: 15%;
+    margin-right: 15%;
+    grid-template-columns: repeat(3, 31.3%);
+    grid-template-rows: repeat(2, 50%);
+    grid-row-gap:45%;
+    grid-column-gap:3%;
+}
+
+.caja1{
+    border: 1px solid lightgray;
+    height: 120%;
+    background-color: crimson;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 120%;
+}
+.caja1 p{
+    margin-top: 6%;
+}
+
+
+.caja2{
+    border: 1px solid lightgray;
+    height: 120%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 120%;
+}
+
+.caja2 p{
+    margin-top: 6%;
+}
+
+
+.marcas{
+    margin-top: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Playfair Display;
+}
+
+.destacadas{
+
+    display: grid;
+    margin-left: 15%;
+    margin-right: 15%;
+    grid-template-columns: repeat(3, 31.3%);
+    grid-template-rows: repeat(2, 50%);
+    grid-row-gap:10%;
+    grid-column-gap:3%;
+}
+
+.cajas{
+    border: 1px solid black;
+}
+
+.cajas img{
+    width: 55%;
+    height: 105%;
+}
+
+
+/*Personalizacion del footer*/
+.relleno{
+    background-color: rgb(233, 231, 231);
+    margin-top: 6%;
+    height: auto;
+}
+
+#suscripcion{
+    margin-top: 1%;
+    margin-left: 34%;
+    width: 44%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 85%;
+}
+
+#suscripcion h1{
+    padding-top: 1.5%;
+    font-weight: normal;
+}
+
+#botones{
+    width: 24.5%;
+    height: 50px;
+    font-size: 100%;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid white;
+}
+
+#botones:hover{
+    background-color: rgb(182, 182, 182);
+    border: 1px solid rgb(182, 182, 182);
+}
+
+.busqueda button{
+    background-color: black;
+    color: white;
+    height: 40px;
+    font-size: 80%;
+    font-weight: bold;
+    text-transform:uppercase;
+    width:20%;
+    text-align: center;
+}
+
+.busqueda button:hover{
+    background-color: white;
+    color: black;
+}
+
+#email{
+    margin-top: 3%;
+    width: 50%;
+    height: 35px;
+    font-size: 150%;
+    margin-right:1%;
+    margin-bottom:3%;
+    font-size:100%;
+    padding-left:2%;
+}
+
+.idiomas{
+    width: 44%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:normal;
+    font-size:80%;
+    float: right;
+}
+
+#seleccion{
+    width: 56%;
+    height: 35px;
+    font-size: 100%;
+    margin-top: 1%;
+    padding-left: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 130%;
+}
+
+.general{
+    margin-top: 5%;
+    color: black;
+    display: grid;
+    margin-left: 4%;
+    grid-template-columns: repeat(5, 20%);
+}
+
+.general p{
+    color:#6f6c6c;
+}
+
+.general h1{
+    text-transform:uppercase;
+    font-size:160%;
+    font-family:math;
+}
+
+.general p:hover{
+    text-decoration:underline;
+}
+
+
+.rrss img{
+    width:60%;
+    margin-bottom: 5%;
+}
+
+
+
+    </style>
+
+</head>
+<body>
+  <header>
+    <div id="busqueda">
+    <div class="logo">
+        <a href="index.php"><img src="images/primor_2.png" title="Primor" alt="logo primor"></a> 
+    </div>
+    <div id="busqueda2">
+        <input type="search" name="busqueda" id="busqueda" placeholder="Buscar en toda la tienda...">
+    </div>
+    <div class="iconos">
+        <a href="FORMULARIOS/login.php"><img src="images/usuario.png" title="Usuario" alt="Usuario" id="usuario"></a>
+        <a href="PAGINAS/carrito.php"><img src="images/carritoCompra.png" title="Carrito de la compra" alt="Carrito de la compra"></a>
+        <a href="PAGINAS/favoritos.php"><img src="images/like.png" title="Articulados que me gustan" alt="Articulados que me gustan"></a>
+        <a href="https://www.google.com/maps/search/tiendas+primor/@40.4781823,-4.0187697,10z/data=!3m1!4b1?entry=ttu"><img src="images/ubi.png" title="Ubicación de la tienda" alt="Ubicación de la tienda"></a>
+    </div>
+    </div>
+    <nav>
+      <ul>
+          <li><a href="#">Perfumes</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Maquillaje</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Cosmética</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Cabello</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Corporales</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Higiene</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Ver Más</a></li>
+      </ul>
+  </nav>
+</header>
+    
+    <div id="banner">
+        <img src="images/hawolin.jpg" alt="banner" id="anuncio1">
+    </div>
+    <div class="promocion">
+        <h1>promociones</h1>
+        <div class="promociones">
+            <div class="caja1">
+                <p>ofertas flash</p>
+            </div>
+            <div class="caja2">
+            <p>nuevos productos</p>
+            </div>
+            <div class="caja2">
+            <p>top ventas</p>
+            </div>
+            <div class="caja2">
+            <p>promociones activas</p>
+            </div>
+            <div class="caja2">
+            <p>outlet</p>
+            </div>
+            <div class="caja2">
+            <p>Regalos por compra</p>
+            </div>
+        </div>
+    </div>
+    <div class="marcas">
+        <h1>Marcas destacadas</h1>
+        <div class="destacadas">
+            <div class="cajas">
+                <img src="images/NARS-removebg-preview.png">
+            </div>
+            <div class="cajas">
+            <img src="images/dior2-removebg-preview.png">
+            </div>
+            <div class="cajas">
+            <img src="images/armani.png">
+            </div>
+            <div class="cajas">
+            <img src="images/versace.png">
+            </div>
+            <div class="cajas">
+            <img src="images/cartier.png">
+            </div>
+            <div class="cajas">
+            <img src="images/paco.png">
+            </div>
+        </div>
+    </div>
+    <footer>
+      <div class="relleno">
+          <div id="suscripcion">
+              <h1>¡Suscribete a nuestra Newsletter!</h1>
+              <p>Recibe noticias y novedades imprescindibles, antes que los demás</p>
+              <button id="botones">Hombre</button>
+              <button id="botones">Mujer</button>
+              <button id="botones">Unisex</button>
+              <div class="busqueda">
+                  <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico">
+                  <button>Inscribirse</button>
+              </div>
+          </div>
+      </div>
+      <div class="general">
+          <div class="mundoPrimor">
+              <h1>Mundo primor</h1>
+              <p>Quienes somos</p>
+              <p>Nuestras tiendas</p>
+              <p>Trabaja con nosotros</p>
+          </div>
+          <div class="promocioness">
+              <h1>Promociones</h1>
+              <p>Ofertas flash</p>
+              <p>Promos activas</p>
+              <p>Novedades estrella</p>
+              <p>Top ventas</p>
+              <p>Outlet</p>
+              <p>Regalos por compras</p>
+          </div>
+          <div class="comunidad">
+              <h1>Comunidad</h1>
+              <p>Blog</p>
+              <p>¡Votanos al Mejor Comercio </p>
+              <p>del Año 2024!</p>
+          </div>
+          <div class="ayuda">
+              <h1>Ayuda</h1>
+              <p>Preguntas frecuentes</p>
+              <p>Atención al cliente</p>
+              <p>Politica de Privacidad</p>
+              <p>Condiciones generales de la web</p>
+              <p>Politica de cookies</p>
+              <p>Politica de privacidad de Andorra</p>
+          </div>
+          <div class="redesSociales">
+              <h1>Enlaces de interes</h1>
+              <p>Black Friday 2024</p>
+              <p>Cyber Monday 2024</p>
+              <p>Rebajas 2024</p>
+              <p>Regalos de navidad 2023</p>
+              <p>Descuentos estudiantes</p>
+              <p>Envio y devoluciones</p>
+          </div>
+  
+          <div class="rrss">
+              <img src="images/rrss.png">
+          </div>
+      </div>
+  </footer>
+</body>
+</html>
